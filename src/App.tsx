@@ -40,6 +40,7 @@ function App() {
       <SinglePage title="Page 2" bgColor="rgb(211,79,79)" />
       <SinglePage title="Page 3" bgColor="rgb(67,91,175)" />
       <SinglePage title="Page 4" bgColor="rgb(255, 193, 7)" />
+      <Typography>TEST</Typography>
     </Box>
   );
 }
