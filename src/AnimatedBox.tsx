@@ -15,10 +15,11 @@ interface AnimatedBoxProps {
     justifyContent?: string;
     alignItems?: string;
     flexDirection?: string;
-
+    position?: string;
+    zIndex?: number;
 }
 
-const AnimatedBox: React.FC<AnimatedBoxProps> = ({ children, animateDirection, height, width, border, flexGrow, display, flexWrap, flexBasis, justifyContent, alignItems, flexDirection }) => {
+const AnimatedBox: React.FC<AnimatedBoxProps> = ({ children, animateDirection, height, width, border, flexGrow, display, flexWrap, flexBasis, justifyContent, alignItems, flexDirection, position, zIndex }) => {
     const ref = useRef(null);
     const isInViewport = useInView(ref);
     const mainControls = useAnimation();
@@ -67,6 +68,8 @@ const AnimatedBox: React.FC<AnimatedBoxProps> = ({ children, animateDirection, h
             display={display}
             justifyContent={justifyContent}
             alignItems={alignItems}
+            position={position === 'absolute' ? 'absolute' : 'relative'}
+            zIndex={zIndex}
 
             variants={{
                 hiddenYU: { opacity: 0, y: 100 },

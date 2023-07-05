@@ -8,6 +8,8 @@ import ExperiencePage from './ExperiencePage';
 import ProjectsPage from './ProjectsPage';
 import ContactPage from './ContactPage';
 import LandingPage from './LandingPage';
+import ReactPlayer from 'react-player';
+import videoGR from './assets/videoGR.mp4';
 
 const theme = createTheme({
   palette: {
@@ -16,6 +18,7 @@ const theme = createTheme({
     },
   },
 });
+
 
 function App() {
   return (
