@@ -17,6 +17,9 @@ const theme = createTheme({
       main: colors.blue[500],
     },
   },
+  typography: {
+    fontFamily: 'Rubik',
+  },
 });
 
 
