@@ -10,11 +10,15 @@ import ContactPage from './ContactPage';
 import LandingPage from './LandingPage';
 import ReactPlayer from 'react-player';
 import videoGR from './assets/videoGR.mp4';
+import AboutPage from './AboutPage';
 
 const theme = createTheme({
   palette: {
     primary: {
       main: colors.blue[500],
+    },
+    secondary: {
+      main: '#FFFFF',
     },
   },
   typography: {
@@ -32,14 +36,15 @@ function App() {
           overflowY: 'scroll',
           scrollBehavior: 'smooth',
           height: '100vh',
-          bgcolor: 'primary.main',
-          color: 'white',
+          // bgcolor: 'primary.main',
+          color: 'primary.main',
           alignItems: 'center',
           display: 'flex',
           flexDirection: 'column',
         }}
       >
         <LandingPage />
+        <AboutPage />
         <ExperiencePage />
         <ProjectsPage />
         <ContactPage />

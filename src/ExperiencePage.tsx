@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Card, Typography } from '@mui/material'
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -31,66 +31,70 @@ const TimeLineComponent: React.FC<{ color: string, childrenLeft: React.ReactNode
 const ExperiencePage: React.FC = () => {
 
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'column', width: '80%', flexGrow: 1 }}>
-            <AnimatedBox animateDirection='xRight'>
-                <Typography sx={{ m: 2 }} variant="h3">Experience</Typography>
-            </AnimatedBox>
-            <Timeline position="alternate">
-                <TimeLineComponent
-                    color='text.secondary'
-                    childrenLeft={
-                        <AnimatedBox animateDirection={'yUp'}>
-                            <Typography>Job1</Typography>
-                        </AnimatedBox>
-                    }
-                    childrenRight={
-                        <AnimatedBox animateDirection={'yUp'}>
-                            <Typography>Job1</Typography>
-                        </AnimatedBox>
-                    }
-                />
-                <TimeLineComponent
-                    color='text.secondary'
-                    childrenLeft={
-                        <AnimatedBox animateDirection={'yUp'}>
-                            <Typography>Job2</Typography>
-                        </AnimatedBox>
-                    }
-                    childrenRight={
-                        <AnimatedBox animateDirection={'yUp'}>
-                            <Typography>Job2</Typography>
-                        </AnimatedBox>
-                    }
-                />
-                <TimeLineComponent
-                    color='text.secondary'
-                    childrenLeft={
-                        <AnimatedBox animateDirection={'yUp'}>
-                            <Typography>Job2</Typography>
-                        </AnimatedBox>
-                    }
-                    childrenRight={
-                        <AnimatedBox animateDirection={'yUp'}>
-                            <Typography>Job2</Typography>
-                        </AnimatedBox>
-                    }
-                />
-                <TimeLineComponent
-                    color='text.secondary'
-                    childrenLeft={
-                        <AnimatedBox animateDirection={'yUp'}>
-                            <Typography>Job3</Typography>
-                        </AnimatedBox>
-                    }
-                    childrenRight={
-                        <AnimatedBox animateDirection={'yUp'}>
-                            <Typography>Job3</Typography>
-                        </AnimatedBox>
-                    }
-                />
 
-            </Timeline>
+        <Box sx={{ display: 'flex', flexDirection: 'column', width: '80%', flexGrow: 1, mt: -10 }}>
+            <Card sx={{ flex: 1, width: '100%' }}>
+                <AnimatedBox animateDirection='xRight'>
+                    <Typography sx={{ m: 2 }} variant="h3">Experience</Typography>
+                </AnimatedBox>
+                <Timeline position="alternate">
+                    <TimeLineComponent
+                        color='text.secondary'
+                        childrenLeft={
+                            <AnimatedBox animateDirection={'yUp'}>
+                                <Typography>Job1</Typography>
+                            </AnimatedBox>
+                        }
+                        childrenRight={
+                            <AnimatedBox animateDirection={'yUp'}>
+                                <Typography>Job1</Typography>
+                            </AnimatedBox>
+                        }
+                    />
+                    <TimeLineComponent
+                        color='text.secondary'
+                        childrenLeft={
+                            <AnimatedBox animateDirection={'yUp'}>
+                                <Typography>Job2</Typography>
+                            </AnimatedBox>
+                        }
+                        childrenRight={
+                            <AnimatedBox animateDirection={'yUp'}>
+                                <Typography>Job2</Typography>
+                            </AnimatedBox>
+                        }
+                    />
+                    <TimeLineComponent
+                        color='text.secondary'
+                        childrenLeft={
+                            <AnimatedBox animateDirection={'yUp'}>
+                                <Typography>Job2</Typography>
+                            </AnimatedBox>
+                        }
+                        childrenRight={
+                            <AnimatedBox animateDirection={'yUp'}>
+                                <Typography>Job2</Typography>
+                            </AnimatedBox>
+                        }
+                    />
+                    <TimeLineComponent
+                        color='text.secondary'
+                        childrenLeft={
+                            <AnimatedBox animateDirection={'yUp'}>
+                                <Typography>Job3</Typography>
+                            </AnimatedBox>
+                        }
+                        childrenRight={
+                            <AnimatedBox animateDirection={'yUp'}>
+                                <Typography>Job3</Typography>
+                            </AnimatedBox>
+                        }
+                    />
+
+                </Timeline>
+            </Card >
         </Box>
+
     )
 }
 
