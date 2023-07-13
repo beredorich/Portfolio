@@ -32,67 +32,67 @@ const ExperiencePage: React.FC = () => {
 
     return (
 
-        <Box sx={{ display: 'flex', flexDirection: 'column', width: '80%', flexGrow: 1, mt: -10 }}>
-            <Card sx={{ flex: 1, width: '100%' }}>
-                <AnimatedBox animateDirection='xRight'>
-                    <Typography sx={{ m: 2 }} variant="h3">Experience</Typography>
-                </AnimatedBox>
-                <Timeline position="alternate">
-                    <TimeLineComponent
-                        color='text.secondary'
-                        childrenLeft={
-                            <AnimatedBox animateDirection={'yUp'}>
-                                <Typography>Job1</Typography>
-                            </AnimatedBox>
-                        }
-                        childrenRight={
-                            <AnimatedBox animateDirection={'yUp'}>
-                                <Typography>Job1</Typography>
-                            </AnimatedBox>
-                        }
-                    />
-                    <TimeLineComponent
-                        color='text.secondary'
-                        childrenLeft={
-                            <AnimatedBox animateDirection={'yUp'}>
-                                <Typography>Job2</Typography>
-                            </AnimatedBox>
-                        }
-                        childrenRight={
-                            <AnimatedBox animateDirection={'yUp'}>
-                                <Typography>Job2</Typography>
-                            </AnimatedBox>
-                        }
-                    />
-                    <TimeLineComponent
-                        color='text.secondary'
-                        childrenLeft={
-                            <AnimatedBox animateDirection={'yUp'}>
-                                <Typography>Job2</Typography>
-                            </AnimatedBox>
-                        }
-                        childrenRight={
-                            <AnimatedBox animateDirection={'yUp'}>
-                                <Typography>Job2</Typography>
-                            </AnimatedBox>
-                        }
-                    />
-                    <TimeLineComponent
-                        color='text.secondary'
-                        childrenLeft={
-                            <AnimatedBox animateDirection={'yUp'}>
-                                <Typography>Job3</Typography>
-                            </AnimatedBox>
-                        }
-                        childrenRight={
-                            <AnimatedBox animateDirection={'yUp'}>
-                                <Typography>Job3</Typography>
-                            </AnimatedBox>
-                        }
-                    />
+        <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', flexGrow: 1, justifyContent: 'center', alignItems: 'center', mt: 10 }}>
 
-                </Timeline>
-            </Card >
+            <AnimatedBox animateDirection='xRight'>
+                <Typography sx={{ m: 2 }} variant="h3" >Experience</Typography>
+            </AnimatedBox>
+            <Timeline position="alternate">
+                <TimeLineComponent
+                    color='text.secondary'
+                    childrenLeft={
+                        <AnimatedBox animateDirection={'yUp'}>
+                            <Typography>Job1</Typography>
+                        </AnimatedBox>
+                    }
+                    childrenRight={
+                        <AnimatedBox animateDirection={'yUp'}>
+                            <Typography >Job1</Typography>
+                        </AnimatedBox>
+                    }
+                />
+                <TimeLineComponent
+                    color='text.secondary'
+                    childrenLeft={
+                        <AnimatedBox animateDirection={'yUp'}>
+                            <Typography>Job2</Typography>
+                        </AnimatedBox>
+                    }
+                    childrenRight={
+                        <AnimatedBox animateDirection={'yUp'}>
+                            <Typography>Job2</Typography>
+                        </AnimatedBox>
+                    }
+                />
+                <TimeLineComponent
+                    color='text.secondary'
+                    childrenLeft={
+                        <AnimatedBox animateDirection={'yUp'}>
+                            <Typography>Job2</Typography>
+                        </AnimatedBox>
+                    }
+                    childrenRight={
+                        <AnimatedBox animateDirection={'yUp'}>
+                            <Typography>Job2</Typography>
+                        </AnimatedBox>
+                    }
+                />
+                <TimeLineComponent
+                    color='text.secondary'
+                    childrenLeft={
+                        <AnimatedBox animateDirection={'yUp'}>
+                            <Typography>Job3</Typography>
+                        </AnimatedBox>
+                    }
+                    childrenRight={
+                        <AnimatedBox animateDirection={'yUp'}>
+                            <Typography>Job3</Typography>
+                        </AnimatedBox>
+                    }
+                />
+
+            </Timeline>
+
         </Box>
 
     )

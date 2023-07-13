@@ -8,9 +8,8 @@ import ExperiencePage from './ExperiencePage';
 import ProjectsPage from './ProjectsPage';
 import ContactPage from './ContactPage';
 import LandingPage from './LandingPage';
-import ReactPlayer from 'react-player';
-import videoGR from './assets/videoGR.mp4';
 import AboutPage from './AboutPage';
+import SkillsPage from './SkillsPage';
 
 const theme = createTheme({
   palette: {
@@ -45,6 +44,7 @@ function App() {
       >
         <LandingPage />
         <AboutPage />
+        <SkillsPage />
         <ExperiencePage />
         <ProjectsPage />
         <ContactPage />

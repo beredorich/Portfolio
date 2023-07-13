@@ -25,14 +25,14 @@ const LandingPage: React.FC = () => {
                     zIndex: 2,
                 }}
             >
-                <Stack direction='row' justifyContent='space-between' bgcolor='primary.main'>
-                    <Box border={1} bgcolor='primary.main' borderRadius={6} ml={5}>
+                <Stack direction='row' justifyContent='space-between' bgcolor="primary.main" color='white'>
+                    <Box borderRadius={6} ml={5}>
                         <img src={RichLogo} alt="My Image" height={70} />
                     </Box>
-                    <Stack direction='row' sx={{ mr: 5 }} color='white'>
-                        <Button sx={{ mr: 5 }} variant='text' color='secondary' size='large' style={{ maxHeight: '80px' }}>Experience</Button>
-                        <Button sx={{ mr: 5 }} variant='text' color='secondary' size='large' style={{ maxHeight: '80px' }}>Projects</Button>
-                        <Button sx={{ mr: 5 }} variant='text' color='secondary' size='large' style={{ maxHeight: '80px' }}>Contact Me</Button>
+                    <Stack direction='row' sx={{ mr: 5 }} spacing={2} color='black'>
+                        <Button variant="text" sx={{ color: 'white' }} size='medium' style={{ maxHeight: '80px' }}>Experiences</Button>
+                        <Button variant="text" sx={{ color: 'white' }} size='medium' style={{ maxHeight: '80px' }}>Projects</Button>
+                        <Button variant="text" sx={{ color: 'white' }} size='medium' style={{ maxHeight: '80px' }}>Contact</Button>
                     </Stack>
                 </Stack>
             </Box>

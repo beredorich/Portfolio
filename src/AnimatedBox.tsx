@@ -48,7 +48,7 @@ const AnimatedBox: React.FC<AnimatedBoxProps> = ({ children, animateDirection, h
                 initialHidden = 'hiddenYU'
                 break;
         }
-        mainControls.set(initialHidden);
+        //mainControls.set(initialHidden);
         mainControls.start(variant);
 
     }, [isInViewport]);
