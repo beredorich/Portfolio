@@ -28,7 +28,7 @@ const SkillBox: React.FC<{ skill: string, icon: any }> = ({ skill, icon }) => {
             <Typography variant='h2'>
                 <img src={icon} />
             </Typography>
-            <Typography variant='h5'>{skill}</Typography>
+            <Typography variant='h6'>{skill}</Typography>
         </Box>
     )
 
@@ -41,7 +41,7 @@ const skillIcons = [securityplus, typescript, mongodb, node, azure, git, powersh
 
 const SkillsPage = () => {
     return (
-        <Box width='100%' height='50vh' color='primary.main' display='flex' position='relative' flexDirection='row' zIndex={-1} justifyContent='center'>
+        <Box width='100%' color='primary.main' display='flex' position='relative' flexDirection='row' zIndex={-1} justifyContent='center'>
             <Card sx={{ width: '80%', border: 1, mt: -5 }}>
                 <Typography variant='h3' textAlign='center'>Skills</Typography>
                 <Box display='flex' flexDirection='row' flexWrap='wrap'>

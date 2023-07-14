@@ -12,10 +12,10 @@ const SinglePage: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 display: 'flex',
                 minHeight: '100vh',
                 width: '100%',
-                scrollSnapAlign: 'start',
-                scrollBehavior: 'smooth',
-                scrollSnapStop: 'always',
-                overscrollBehavior: 'none',
+                // scrollSnapAlign: 'start',
+                // scrollBehavior: 'smooth',
+                // scrollSnapStop: 'always',
+                // overscrollBehavior: 'none',
                 height: '100vh',
             }}
         >
