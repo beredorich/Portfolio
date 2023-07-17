@@ -1,38 +1,30 @@
 import React from 'react'
-import SinglePage from './SinglePage'
 import { Box, Card, Typography } from '@mui/material'
 import AnimatedBox from './AnimatedBox'
 
 const ProjectsPage = () => {
     return (
-        <SinglePage>
-            <Box sx={{ height: '80%', width: '90%' }}>
-                <Typography variant='h3'>Projects</Typography>
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', height: '100%', width: '100%' }}>
-                    <AnimatedBox animateDirection='xRight' display='flex' flexWrap='wrap' flexBasis={{ xs: '100%', sm: '100%', md: '100%', lg: '50%', xl: '50%' }}>
-                        <Card sx={{ flex: 1 }}>
-                            <Typography variant='h4'>Project1</Typography>
-                        </Card>
-                    </AnimatedBox>
-                    <AnimatedBox animateDirection='yDown' display='flex' flexWrap='wrap' flexBasis={{ xs: '100%', sm: '100%', md: '100%', lg: '50%', xl: '50%' }}>
-                        <Card sx={{ flex: 1 }}>
-                            <Typography variant='h4'>Project2</Typography>
-                        </Card>
-                    </AnimatedBox>
-                    <AnimatedBox animateDirection='yDown' display='flex' flexWrap='wrap' flexBasis={{ xs: '100%', sm: '100%', md: '100%', lg: '50%', xl: '50%' }}>
-                        <Card sx={{ flex: 1 }}>
-                            <Typography variant='h4'>Project3</Typography>
-                        </Card>
-                    </AnimatedBox>
-                    <AnimatedBox animateDirection='yUp' display='flex' flexWrap='wrap' flexBasis={{ xs: '100%', sm: '100%', md: '100%', lg: '50%', xl: '50%' }}>
-                        <Card sx={{ flex: 1 }}>
-                            <Typography variant='h4'>Project4</Typography>
-                        </Card>
-                    </AnimatedBox>
-                </Box>
 
+        <Box sx={{ width: '100%', alignItems: 'center', justifyContent: 'center', display: 'flex', flexDirection: 'column', flexWrap: 'wrap', flexGrow: 1 }}>
+            <Box sx={{ bgcolor: 'primary.main', width: '100%', pb: 5 }}>
+                <Typography variant='h3' color='white' textAlign='center' pt={10}>Projects</Typography>
+                <Typography textAlign='center' p={2} color='white'>Here are some projects I have a passion for and built for fun.</Typography>
             </Box>
-        </SinglePage >
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', width: '90%', flexGrow: 1, mt: -5, mb: 20 }}>
+                <Card sx={{ flexBasis: { xs: '100%', sm: '100%', md: '33.333333%', lg: '33.333333%', xl: '33.333333%' }, minHeight: '500px' }}>
+                    <Typography variant='h4'>ProjectStart</Typography>
+
+                </Card>
+                <Card sx={{ flexBasis: { xs: '100%', sm: '100%', md: '33.333333%', lg: '33.333333%', xl: '33.333333%' }, minHeight: '500px' }}>
+                    <Typography variant='h4'>Project2</Typography>
+
+                </Card>
+                <Card sx={{ flexBasis: { xs: '100%', sm: '100%', md: '33.333333%', lg: '33.333333%', xl: '33.333333%' }, minHeight: '500px' }}>
+                    <Typography variant='h4'>Project3</Typography>
+
+                </Card>
+            </Box >
+        </Box >
     )
 }
 

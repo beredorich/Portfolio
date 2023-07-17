@@ -1,21 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import AnimatedBox from './AnimatedBox'
-import { Box, Button, Card, CardMedia, Stack, Typography } from '@mui/material'
-import SinglePage from './SinglePage'
-import videoGR from './assets/videoGR.mp4'
-import ReactPlayer from 'react-player'
+import { AppBar, Box, Button, Card, CardMedia, Drawer, Stack, Typography } from '@mui/material'
 import RichLogo from './assets/logo_clear.png'
 import Mountains from './assets/mountain.jpg'
+import { debounce } from 'lodash';
+import MenuIcon from '@mui/icons-material/Menu';
 
-const Video = () => {
-    return (
-        <Box sx={{ opacity: .08, zIndex: 3, position: 'relative', bgcolor: 'red' }}>
-            <ReactPlayer url={videoGR} playing={true} loop={true} muted={true} width={'100%'} height={'100%'} />
-        </Box>
-
-    );
-};
 const LandingPage: React.FC = () => {
+    const [shrinkMenu, setShrinkMenu] = useState(false);
+    useEffect(() => {
+        const handleResize = debounce(() => {
+            if (window.innerWidth < 600) {
+                setShrinkMenu(true)
+            } else {
+                setShrinkMenu(false)
+            }
+        }, 500);
+
+        window.addEventListener('resize', handleResize);
+    }, []);
+
+    useEffect(() => {
+        if (window.innerWidth < 600) {
+            setShrinkMenu(true)
+        }
+    }, []);
+
+    const [toggleDrawer, setToggleDrawer] = useState(false);
     return (
         <Box sx={{ width: '100%', minHeight: '100vh', position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
             <Box
@@ -25,16 +36,7 @@ const LandingPage: React.FC = () => {
                     zIndex: 2,
                 }}
             >
-                <Stack direction='row' justifyContent='space-between' bgcolor="primary.main" color='white'>
-                    <Box borderRadius={6} ml={5}>
-                        <img src={RichLogo} alt="My Image" height={70} />
-                    </Box>
-                    <Stack direction='row' sx={{ mr: 5 }} spacing={2} color='black'>
-                        <Button variant="text" sx={{ color: 'white' }} size='medium' style={{ maxHeight: '80px' }}>Experiences</Button>
-                        <Button variant="text" sx={{ color: 'white' }} size='medium' style={{ maxHeight: '80px' }}>Projects</Button>
-                        <Button variant="text" sx={{ color: 'white' }} size='medium' style={{ maxHeight: '80px' }}>Contact</Button>
-                    </Stack>
-                </Stack>
+
             </Box>
             <Box
                 sx={{
@@ -82,3 +84,5 @@ const LandingPage: React.FC = () => {
 };
 
 export default LandingPage
+
+

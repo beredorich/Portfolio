@@ -1,6 +1,5 @@
 import { Box, Card, Icon, Typography } from '@mui/material'
 import React from 'react'
-import RamenDiningIcon from '@mui/icons-material/RamenDining';
 import api from './assets/skills/api.png'
 import azure from './assets/skills/azure.png'
 import css from './assets/skills/css.png'
@@ -42,7 +41,7 @@ const skillIcons = [securityplus, typescript, mongodb, node, azure, git, powersh
 const SkillsPage = () => {
     return (
         <Box width='100%' color='primary.main' display='flex' position='relative' flexDirection='row' zIndex={-1} justifyContent='center'>
-            <Card sx={{ width: '80%', border: 1, mt: -5 }}>
+            <Card sx={{ width: '80%', border: 5, mt: -5, borderColor: 'turquoise', borderRadius: 10 }}>
                 <Typography variant='h3' textAlign='center'>Skills</Typography>
                 <Box display='flex' flexDirection='row' flexWrap='wrap'>
                     {skills.map((skill, index) => {

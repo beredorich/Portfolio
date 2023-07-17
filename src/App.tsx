@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import { Box, Typography, colors } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import SinglePage from './SinglePage';
 import AnimatedBox from './AnimatedBox';
 import ExperiencePage from './ExperiencePage';
 import ProjectsPage from './ProjectsPage';
@@ -10,6 +9,7 @@ import ContactPage from './ContactPage';
 import LandingPage from './LandingPage';
 import AboutPage from './AboutPage';
 import SkillsPage from './SkillsPage';
+import NavBar from './NavBar';
 
 const theme = createTheme({
   palette: {
@@ -29,6 +29,7 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
+
       <Box
         sx={{
           scrollSnapType: 'y proximity',
@@ -40,14 +41,17 @@ function App() {
           alignItems: 'center',
           display: 'flex',
           flexDirection: 'column',
+          minWidth: '375px'
         }}
       >
+        <NavBar />
         <LandingPage />
         <AboutPage />
         <SkillsPage />
         <ExperiencePage />
         <ProjectsPage />
         <ContactPage />
+
       </Box>
     </ThemeProvider>
   );
