@@ -61,7 +61,10 @@ function App() {
         <AboutPage aboutRef={aboutRef} />
         <SkillsPage />
         <ExperiencePage experienceRef={experienceRef} />
-        <ProjectsPage projectsRef={projectsRef} />
+        <Box minHeight={200}>
+
+        </Box>
+        {/* <ProjectsPage projectsRef={projectsRef} /> */}
         <ContactPage contactRef={contactRef} />
 
       </Box>

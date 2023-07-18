@@ -31,7 +31,7 @@ const LandingPage: React.FC<{ homeRef: MutableRefObject<HTMLDivElement | null> }
                     display="flex"
                     justifyContent="center" // center child elements horizontally
                 >
-                    <Typography variant='h3'>Hello my name is Rich Beredo.</Typography>
+                    <Typography variant='h3'>Rich Beredo</Typography>
                     <Typography variant='h5'>Software Engineer</Typography>
                 </Box>
             </Box>

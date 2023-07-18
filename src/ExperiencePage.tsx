@@ -18,7 +18,7 @@ const JobBox: React.FC<{ left: string | Array<string>, right: string | Array<str
                         <img src={boxContent} height='auto' width='300' />
                         :
                         <Box display='flex' flexDirection='column'>
-                            <Card sx={{ m: 2, p: 2, border: 3, borderColor: 'turquoise' }}>
+                            <Card sx={{ m: 2, p: 2, border: 3, borderColor: 'turquoise', borderRadius: 10 }}>
                                 <Box flexDirection='row' display='flex' justifyContent='space-between' alignItems='center'>
                                     <Typography variant='h5'>{title}</Typography>
                                     <Typography variant='h6'>{timeline}</Typography>
@@ -34,7 +34,6 @@ const JobBox: React.FC<{ left: string | Array<string>, right: string | Array<str
             </Box>
         )
     }
-
     return (
         <Box display='flex' flexDirection='row' width='100%' flexWrap={wrap === 'wrap' ? 'wrap' : 'wrap-reverse'} justifyContent='center' alignItems='center' bgcolor={bgcolor}>
             <BoxComponent boxContent={left} title={title} timeline={timeline} />

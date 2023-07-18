@@ -11,15 +11,15 @@ const ProjectsPage: React.FC<{ projectsRef: MutableRefObject<HTMLDivElement | nu
             </Box>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', width: '90%', flexGrow: 1, mt: -5, mb: 20 }}>
                 <Card sx={{ flexBasis: { xs: '100%', sm: '100%', md: '33.333333%', lg: '33.333333%', xl: '33.333333%' }, minHeight: '500px' }}>
-                    <Typography variant='h4'>ProjectStart</Typography>
+                    <Typography variant='h4'>Gamble Tracker Website</Typography>
 
                 </Card>
                 <Card sx={{ flexBasis: { xs: '100%', sm: '100%', md: '33.333333%', lg: '33.333333%', xl: '33.333333%' }, minHeight: '500px' }}>
-                    <Typography variant='h4'>Project2</Typography>
+                    <Typography variant='h4'>Powershell Electron App</Typography>
 
                 </Card>
                 <Card sx={{ flexBasis: { xs: '100%', sm: '100%', md: '33.333333%', lg: '33.333333%', xl: '33.333333%' }, minHeight: '500px' }}>
-                    <Typography variant='h4'>Project3</Typography>
+                    <Typography variant='h4'>Workout ChatGPT Generator Website</Typography>
 
                 </Card>
             </Box >
