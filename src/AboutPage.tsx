@@ -1,11 +1,10 @@
 import { Box, Typography } from '@mui/material'
-import React from 'react'
+import React, { MutableRefObject } from 'react'
 import EmbryRiddle from './assets/Embry-Riddle_Aeronautical_University_seal.png'
 
-const AboutPage = () => {
+const AboutPage: React.FC<{ aboutRef: MutableRefObject<HTMLDivElement | null> }> = ({ aboutRef }) => {
     return (
-
-        <Box width='100%' bgcolor='primary.main' color='white' display='flex' flexWrap='wrap' position='relative' flexDirection='row' zIndex={-1} pt={10} pb={10}>
+        <Box ref={aboutRef} width='100%' bgcolor='primary.main' color='white' display='flex' flexWrap='wrap' position='relative' flexDirection='row' zIndex={-1} pt={10} pb={10}>
             <Box
                 flexBasis={{ xs: '100%', sm: '100%', md: '30%', lg: '30%', xl: '40%' }}
                 width='30%' display='flex' justifyContent='center' alignItems='center'>

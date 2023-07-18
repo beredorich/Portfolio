@@ -1,43 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { MutableRefObject } from 'react'
 import AnimatedBox from './AnimatedBox'
-import { AppBar, Box, Button, Card, CardMedia, Drawer, Stack, Typography } from '@mui/material'
+import { Box, Button, Card, CardMedia, Stack, Typography } from '@mui/material'
+import videoGR from './assets/videoGR.mp4'
+import ReactPlayer from 'react-player'
 import RichLogo from './assets/logo_clear.png'
 import Mountains from './assets/mountain.jpg'
-import { debounce } from 'lodash';
-import MenuIcon from '@mui/icons-material/Menu';
 
-const LandingPage: React.FC = () => {
-    const [shrinkMenu, setShrinkMenu] = useState(false);
-    useEffect(() => {
-        const handleResize = debounce(() => {
-            if (window.innerWidth < 600) {
-                setShrinkMenu(true)
-            } else {
-                setShrinkMenu(false)
-            }
-        }, 500);
 
-        window.addEventListener('resize', handleResize);
-    }, []);
-
-    useEffect(() => {
-        if (window.innerWidth < 600) {
-            setShrinkMenu(true)
-        }
-    }, []);
-
-    const [toggleDrawer, setToggleDrawer] = useState(false);
+const LandingPage: React.FC<{ homeRef: MutableRefObject<HTMLDivElement | null> }> = ({ homeRef }) => {
     return (
-        <Box sx={{ width: '100%', minHeight: '100vh', position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-            <Box
-                sx={{
-                    height: '10%',
-                    width: '100%',
-                    zIndex: 2,
-                }}
-            >
-
-            </Box>
+        <Box ref={homeRef} sx={{ width: '100%', minHeight: '100vh', position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
             <Box
                 sx={{
                     position: 'relative',
@@ -52,7 +24,7 @@ const LandingPage: React.FC = () => {
                 <Box
                     sx={{
                         alignSelf: 'center',
-                        justifySelf: 'center',
+                        justifySelsf: 'center',
                         flexDirection: 'column',
                         height: '90%',
                     }}
@@ -62,7 +34,7 @@ const LandingPage: React.FC = () => {
                     <Typography variant='h3'>Hello my name is Rich Beredo.</Typography>
                     <Typography variant='h5'>Software Engineer</Typography>
                 </Box>
-            </Box >
+            </Box>
 
             <Box
                 sx={{
@@ -79,10 +51,8 @@ const LandingPage: React.FC = () => {
             </Box>
 
 
-        </Box >
-    );
+        </Box>
+    )
 };
 
 export default LandingPage
-
-

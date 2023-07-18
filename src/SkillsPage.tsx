@@ -1,5 +1,5 @@
 import { Box, Card, Icon, Typography } from '@mui/material'
-import React from 'react'
+import React, { MutableRefObject } from 'react'
 import api from './assets/skills/api.png'
 import azure from './assets/skills/azure.png'
 import css from './assets/skills/css.png'
@@ -37,8 +37,7 @@ const SkillBox: React.FC<{ skill: string, icon: any }> = ({ skill, icon }) => {
 const skills = ['Security+', 'TypeScript', 'MongoDB', 'NodeJS', 'Azure', 'Git', 'PowerShell', 'React', 'Docker', 'ExpressJS', 'CSS', 'MaterialUI', 'Framer', 'HTML5', 'VSCode', 'Scrum']
 const skillIcons = [securityplus, typescript, mongodb, node, azure, git, powershell, react, docker, express, css, materialui, framer, html5, vscode, scrum]
 
-
-const SkillsPage = () => {
+const SkillsPage: React.FC = () => {
     return (
         <Box width='100%' color='primary.main' display='flex' position='relative' flexDirection='row' zIndex={-1} justifyContent='center'>
             <Card sx={{ width: '80%', border: 5, mt: -5, borderColor: 'turquoise', borderRadius: 10 }}>
