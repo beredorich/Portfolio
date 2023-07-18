@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { MutableRefObject } from 'react'
 import { Box, Card, Typography } from '@mui/material'
 import AnimatedBox from './AnimatedBox'
 
-const ProjectsPage = () => {
+const ProjectsPage: React.FC<{ projectsRef: MutableRefObject<HTMLDivElement | null> }> = ({ projectsRef }) => {
     return (
-
-        <Box sx={{ width: '100%', alignItems: 'center', justifyContent: 'center', display: 'flex', flexDirection: 'column', flexWrap: 'wrap', flexGrow: 1 }}>
+        <Box ref={projectsRef} sx={{ width: '100%', alignItems: 'center', justifyContent: 'center', display: 'flex', flexDirection: 'column', flexWrap: 'wrap', flexGrow: 1 }}>
             <Box sx={{ bgcolor: 'primary.main', width: '100%', pb: 5 }}>
                 <Typography variant='h3' color='white' textAlign='center' pt={10}>Projects</Typography>
                 <Typography textAlign='center' p={2} color='white'>Here are some projects I have a passion for and built for fun.</Typography>
