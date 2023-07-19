@@ -61,12 +61,11 @@ function App() {
         <AboutPage aboutRef={aboutRef} />
         <SkillsPage />
         <ExperiencePage experienceRef={experienceRef} />
-        <Box minHeight={200}>
+        <Box minHeight={200} bgcolor='primary.main' width='100%'>
 
         </Box>
         {/* <ProjectsPage projectsRef={projectsRef} /> */}
         <ContactPage contactRef={contactRef} />
-
       </Box>
     </ThemeProvider>
   );

@@ -28,7 +28,7 @@ const ContactPage: React.FC<{ contactRef: MutableRefObject<HTMLDivElement | null
 
 
     return (
-        <Box ref={contactRef} width='100%' sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', bgcolor: 'primary.main', color: 'white' }}>
+        <Box ref={contactRef} width='100%' sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', color: 'white' }}>
             <Box flexGrow={1} bgcolor='darkblue' width='50%' border={5} borderRadius={10} borderColor='turquoise' p={7} mt={-12} display='flex' justifyContent='center' alignItems='center' flexWrap='wrap'>
                 <Box
                     pb={2}
@@ -50,7 +50,7 @@ const ContactPage: React.FC<{ contactRef: MutableRefObject<HTMLDivElement | null
                 <Box pb={2} sx={{ flexBasis: { xs: '100%', sm: '100%', md: '50%', lg: '50%', xl: '50%' } }}
                     display='flex' justifyContent='center' alignItems='center'>
                     <Button variant='outlined' sx={{ border: 3, borderRadius: 10, p: 2 }} style={{ borderColor: 'turquoise' }} onClick={handleDownload}>
-                        <Typography color='white' variant='h5'>Download my Resume</Typography>
+                        <Typography color='white' variant='h5'>Download Resume</Typography>
                     </Button>
                 </Box>
                 <Drawer anchor='bottom' open={contactDrawer} onClose={() => setContactDrawer(false)}>
@@ -66,15 +66,15 @@ const ContactPage: React.FC<{ contactRef: MutableRefObject<HTMLDivElement | null
             </Box>
             <Box width='10%' mt={5} justifyContent='center' alignItems='center' display='flex'>
                 <Stack justifyContent='center' alignItems='center'>
-                    <Stack direction='row'>
+                    <Stack direction='row' spacing={4}>
                         <Link href='https://github.com/beredorich'>
-                            <Button variant='outlined' sx={{ color: 'white' }}><img src={githubLogo} /> </Button>
+                            <Button><img src={githubLogo} /> </Button>
                         </Link>
                         <Link href='https://www.linkedin.com/in/richardberedo/'>
-                            <Button variant='outlined' sx={{ color: 'white' }}><img src={linkedinLogo} /> </Button>
+                            <Button><img src={linkedinLogo} /> </Button>
                         </Link>
                     </Stack>
-                    <img src={RichLogo} alt="My Image" height={150} />
+                    <img src={RichLogoBlack} alt="My Image" height={150} />
                 </Stack>
 
             </Box>

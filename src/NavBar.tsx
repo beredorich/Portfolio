@@ -46,19 +46,19 @@ const NavBar: React.FC<NavBarProps> = ({ homeRef, contactRef, aboutRef, projects
     return (
         <>
             <AppBar position='sticky'>
-                <Stack direction='row' justifyContent='space-between' bgcolor="primary.main" color='white'>
+                <Stack direction='row' justifyContent='space-between' bgcolor="white" color='primary.main'>
                     <Box borderRadius={6} ml={2}>
-                        <Button onClick={() => handleClick(homeRef)}><img src={RichLogo} height={70} /></Button>
+                        <Button onClick={() => handleClick(homeRef)}><img src={RichLogoBlack} height={70} /></Button>
                         <Link href='https://github.com/beredorich'>
-                            <Button variant='outlined' sx={{ color: 'white' }}><img src={githubLogo} height={40} /> </Button>
+                            <Button><img src={githubLogo} height={40} /> </Button>
                         </Link>
                         <Link href='https://www.linkedin.com/in/richardberedo/'>
-                            <Button variant='outlined' sx={{ color: 'white' }}><img src={linkedinLogo} height={40} /> </Button>
+                            <Button><img src={linkedinLogo} height={40} /> </Button>
                         </Link>
                     </Box>
                     {shrinkMenu ?
                         <>
-                            <Button variant="text" sx={{ color: 'white' }} size='medium' onClick={() => setToggleDrawer(true)} style={{ maxHeight: '80px' }}><MenuIcon /></Button>
+                            <Button variant="text" sx={{ color: 'primary.main' }} size='medium' onClick={() => setToggleDrawer(true)} style={{ maxHeight: '80px' }}><MenuIcon /></Button>
                             <Drawer anchor='top' open={toggleDrawer} onClose={() => setToggleDrawer(false)}>
                                 <Stack direction='column' spacing={2} color='black' justifyContent='center' alignItems='center' p={2}>
                                     <Button onClick={() => console.log('go cowboys')}><img src={RichLogoBlack} height={80} /></Button>
@@ -70,11 +70,11 @@ const NavBar: React.FC<NavBarProps> = ({ homeRef, contactRef, aboutRef, projects
                             </Drawer>
                         </>
                         :
-                        <Stack direction='row' sx={{ mr: 5 }} spacing={2} color='black'>
-                            <Button variant="text" sx={{ color: 'white' }} size='medium' style={{ maxHeight: '80px' }} onClick={() => handleClick(aboutRef)}>About</Button>
-                            <Button variant="text" sx={{ color: 'white' }} size='medium' style={{ maxHeight: '80px' }} onClick={() => handleClick(experienceRef)}>Experiences</Button>
-                            {/* <Button variant="text" sx={{ color: 'white' }} size='medium' style={{ maxHeight: '80px' }} onClick={() => handleClick(projectsRef)}>Projects</Button> */}
-                            <Button variant="text" sx={{ color: 'white' }} size='medium' style={{ maxHeight: '80px' }} onClick={() => handleClick(contactRef)}>Contact</Button>
+                        <Stack direction='row' sx={{ mr: 5 }} spacing={2} color='primary.main'>
+                            <Button variant="text" size='medium' style={{ maxHeight: '80px' }} onClick={() => handleClick(aboutRef)}>About</Button>
+                            <Button variant="text" size='medium' style={{ maxHeight: '80px' }} onClick={() => handleClick(experienceRef)}>Experiences</Button>
+                            {/* <Button variant="text" size='medium' style={{ maxHeight: '80px' }} onClick={() => handleClick(projectsRef)}>Projects</Button> */}
+                            <Button variant="text" size='medium' style={{ maxHeight: '80px' }} onClick={() => handleClick(contactRef)}>Contact</Button>
                         </Stack>
                     }
                 </Stack>

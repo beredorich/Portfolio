@@ -39,7 +39,7 @@ const skillIcons = [securityplus, typescript, mongodb, node, azure, git, powersh
 
 const SkillsPage: React.FC = () => {
     return (
-        <Box width='100%' color='primary.main' display='flex' position='relative' flexDirection='row' zIndex={-1} justifyContent='center'>
+        <Box width='100%' bgcolor='primary.main' color='primary.main' display='flex' position='relative' flexDirection='row' zIndex={-1} justifyContent='center'>
             <Card sx={{ width: '80%', border: 5, mt: -5, borderColor: 'turquoise', borderRadius: 10 }}>
                 <Typography variant='h3' textAlign='center'>Skills</Typography>
                 <Box display='flex' flexDirection='row' flexWrap='wrap'>
