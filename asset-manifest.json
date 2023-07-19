@@ -1,7 +1,6 @@
 {
   "files": {
-    "main.js": "/portfolio/static/js/main.bd2304ab.js",
-    "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
+    "main.js": "/portfolio/static/js/main.768ddda7.js",
     "static/media/Embry-Riddle_Aeronautical_University_seal.png": "/portfolio/static/media/Embry-Riddle_Aeronautical_University_seal.a10c7040bf5ed951a707.png",
     "static/media/army.png": "/portfolio/static/media/army.8f8c0707fed8f87d7844.png",
     "static/media/ecocar.png": "/portfolio/static/media/ecocar.fa22a410c5fdb5e2dce2.png",
@@ -9,10 +8,9 @@
     "static/media/logo_white.png": "/portfolio/static/media/logo_white.627ea5606f7137478ac9.png",
     "static/media/caci.png": "/portfolio/static/media/caci.9c4e0d372caa1f5203c8.png",
     "index.html": "/portfolio/index.html",
-    "main.bd2304ab.js.map": "/portfolio/static/js/main.bd2304ab.js.map",
-    "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
+    "main.768ddda7.js.map": "/portfolio/static/js/main.768ddda7.js.map"
   },
   "entrypoints": [
-    "static/js/main.bd2304ab.js"
+    "static/js/main.768ddda7.js"
   ]
 }
