@@ -67,7 +67,7 @@ function App() {
 
         </Box>
         {/* <ProjectsPage projectsRef={projectsRef} /> */}
-        <ContactPage contactRef={contactRef} />
+        <ContactPage contactRef={contactRef} homeRef={homeRef} />
       </Box>
     </ThemeProvider>
   );

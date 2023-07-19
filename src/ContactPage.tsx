@@ -6,7 +6,13 @@ import RichLogoBlack from './assets/logo_white.png'
 import githubLogo from './assets/github.png'
 import linkedinLogo from './assets/linkedin.png'
 
-const ContactPage: React.FC<{ contactRef: MutableRefObject<HTMLDivElement | null> }> = ({ contactRef }) => {
+type ContactPageProps = {
+    contactRef: MutableRefObject<HTMLDivElement | null>
+    homeRef: MutableRefObject<HTMLDivElement | null>
+}
+
+
+const ContactPage: React.FC<ContactPageProps> = ({ contactRef, homeRef }) => {
 
     const [contactDrawer, setContactDrawer] = useState(false);
 
@@ -24,6 +30,12 @@ const ContactPage: React.FC<{ contactRef: MutableRefObject<HTMLDivElement | null
             .catch((error) => {
                 console.error('Error downloading file:', error);
             });
+    };
+
+    const handleHome = () => {
+        if (homeRef.current) {
+            homeRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
     };
 
 
@@ -74,7 +86,9 @@ const ContactPage: React.FC<{ contactRef: MutableRefObject<HTMLDivElement | null
                             <Button><img src={linkedinLogo} /> </Button>
                         </Link>
                     </Stack>
-                    <img src={RichLogoBlack} alt="My Image" height={150} />
+                    <Button onClick={handleHome}>
+                        <img src={RichLogoBlack} alt="My Image" height={150} />
+                    </Button>
                 </Stack>
 
             </Box>

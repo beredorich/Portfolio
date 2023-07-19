@@ -42,11 +42,12 @@ const LandingPage: React.FC<{ homeRef: MutableRefObject<HTMLDivElement | null> }
                 sx={{
                     position: 'relative',
                     zIndex: 2,
-                    height: '90%',
+                    height: '100%',
                     width: '90%',
                     display: 'flex',
                     flexDirection: 'column',
                 }}
+                ref={homeRef}
             >
                 <Box
                     sx={{
