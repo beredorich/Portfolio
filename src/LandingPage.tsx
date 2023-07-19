@@ -25,7 +25,7 @@ const LandingPage: React.FC<{ homeRef: MutableRefObject<HTMLDivElement | null> }
                     touchControls: true,
                     gyroControls: false,
                     minHeight: 600.0,
-                    minWidth: 600.0,
+                    minWidth: 375.0,
                     scale: 1.0,
                     scaleMobile: 1.0,
                     shininess: 73.00,

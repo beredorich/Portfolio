@@ -47,7 +47,9 @@ function App() {
           alignItems: 'center',
           display: 'flex',
           flexDirection: 'column',
-          minWidth: '375px'
+          minWidth: '0',
+          overflowX: 'hidden',
+          touchAction: 'pan-y',
         }}
       >
         <NavBar
