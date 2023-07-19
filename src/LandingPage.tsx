@@ -1,13 +1,9 @@
 import React, { MutableRefObject, useEffect, useRef, useState } from 'react'
-import AnimatedBox from './AnimatedBox'
-import { Box, Button, Card, CardMedia, Stack, Typography } from '@mui/material'
-import videoGR from './assets/videoGR.mp4'
-import ReactPlayer from 'react-player'
-import RichLogo from './assets/logo_clear.png'
-import Mountains from './assets/mountain.jpg'
+import { stagger, useAnimate } from 'framer-motion'
+import { Box, Typography } from '@mui/material'
 import WAVES from 'vanta/dist/vanta.waves.min'
-import CLOUDS from 'vanta/dist/vanta.clouds.min'
 import * as THREE from 'three'
+import AnimateDivs from './AnimateDivs'
 
 
 const LandingPage: React.FC<{ homeRef: MutableRefObject<HTMLDivElement | null> }> = ({ homeRef }) => {
@@ -35,6 +31,8 @@ const LandingPage: React.FC<{ homeRef: MutableRefObject<HTMLDivElement | null> }
         }
     }, [vantaEffect]);
 
+    const [scope, animate] = useAnimate()
+    AnimateDivs(scope, animate)
 
     return (
         <Box ref={vantaRef} sx={{ width: '100%', minHeight: '100vh', position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
@@ -60,8 +58,14 @@ const LandingPage: React.FC<{ homeRef: MutableRefObject<HTMLDivElement | null> }
                     justifyContent="center"
                     color={'white'}
                 >
-                    <Typography variant='h1'>Rich Beredo</Typography>
-                    <Typography variant='h3'>Software Engineer</Typography>
+                    <Box ref={scope}>
+                        <div>
+                            <Typography variant='h2'>Rich Beredo</Typography>
+                        </div>
+                        <div>
+                            <Typography variant='h4' >Software Engineer</Typography>
+                        </div>
+                    </Box>
                 </Box>
             </Box>
         </Box>

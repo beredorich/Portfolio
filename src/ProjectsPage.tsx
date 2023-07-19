@@ -1,6 +1,5 @@
 import React, { MutableRefObject } from 'react'
 import { Box, Card, Typography } from '@mui/material'
-import AnimatedBox from './AnimatedBox'
 
 const ProjectsPage: React.FC<{ projectsRef: MutableRefObject<HTMLDivElement | null> }> = ({ projectsRef }) => {
     return (

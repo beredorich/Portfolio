@@ -1,11 +1,12 @@
-import { Box, Button, Drawer, Stack, AppBar, Typography, Link } from '@mui/material';
+import { Box, Button, Drawer, Stack, AppBar, Link } from '@mui/material';
 import { debounce } from 'lodash';
 import React, { MutableRefObject, useEffect, useState } from 'react'
-import RichLogo from './assets/logo_clear.png'
 import RichLogoBlack from './assets/logo_white.png'
 import MenuIcon from '@mui/icons-material/Menu';
 import githubLogo from './assets/github.png'
 import linkedinLogo from './assets/linkedin.png'
+import AnimateDivs from './AnimateDivs'
+import { useAnimate } from 'framer-motion';
 
 type NavBarProps = {
     homeRef: MutableRefObject<HTMLDivElement | null>
@@ -14,7 +15,6 @@ type NavBarProps = {
     projectsRef: MutableRefObject<HTMLDivElement | null>
     contactRef: MutableRefObject<HTMLDivElement | null>
 }
-
 
 const NavBar: React.FC<NavBarProps> = ({ homeRef, contactRef, aboutRef, projectsRef, experienceRef }) => {
     useEffect(() => {
@@ -43,10 +43,14 @@ const NavBar: React.FC<NavBarProps> = ({ homeRef, contactRef, aboutRef, projects
         }
     };
 
+    const [scope, animate] = useAnimate()
+
+    AnimateDivs(scope, animate)
+
     return (
         <>
             <AppBar position='sticky'>
-                <Stack direction='row' justifyContent='space-between' bgcolor="white" color='primary.main'>
+                <Stack ref={scope} direction='row' justifyContent='space-between' bgcolor="white" color='primary.main'>
                     <Box borderRadius={6} ml={2}>
                         <Button onClick={() => handleClick(homeRef)}><img src={RichLogoBlack} height={70} /></Button>
                         <Link href='https://github.com/beredorich'>

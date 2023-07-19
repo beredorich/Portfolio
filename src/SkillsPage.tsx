@@ -1,6 +1,5 @@
 import { Box, Card, Icon, Typography } from '@mui/material'
-import React, { MutableRefObject } from 'react'
-import api from './assets/skills/api.png'
+import React, { MutableRefObject, useEffect } from 'react'
 import azure from './assets/skills/azure.png'
 import css from './assets/skills/css.png'
 import docker from './assets/skills/docker.png'
@@ -17,6 +16,7 @@ import scrum from './assets/skills/scrum.png'
 import securityplus from './assets/skills/securityplus.png'
 import typescript from './assets/skills/typescript.png'
 import vscode from './assets/skills/vscode.png'
+import { stagger, useAnimate, useInView } from 'framer-motion'
 
 
 const SkillBox: React.FC<{ skill: string, icon: any }> = ({ skill, icon }) => {
@@ -38,8 +38,20 @@ const skills = ['Security+', 'TypeScript', 'MongoDB', 'NodeJS', 'Azure', 'Git', 
 const skillIcons = [securityplus, typescript, mongodb, node, azure, git, powershell, react, docker, express, css, materialui, framer, html5, vscode, scrum]
 
 const SkillsPage: React.FC = () => {
+    const [scope, animate] = useAnimate()
+
+    const isInView = useInView(scope)
+    useEffect(() => {
+        if (isInView) {
+            const enterAnimation = async () => {
+                await animate("div", { opacity: [0.1, 1], x: [-10, 0] }, { delay: stagger(0.05), duration: 0.1 })
+            }
+            enterAnimation()
+        }
+    }, [isInView]);
+
     return (
-        <Box width='100%' bgcolor='primary.main' color='primary.main' display='flex' position='relative' flexDirection='row' zIndex={-1} justifyContent='center'>
+        <Box ref={scope} width='100%' bgcolor='primary.main' color='primary.main' display='flex' position='relative' flexDirection='row' zIndex={-1} justifyContent='center'>
             <Card sx={{ width: '80%', border: 5, mt: -5, borderColor: 'turquoise', borderRadius: 10 }}>
                 <Typography variant='h3' textAlign='center'>Skills</Typography>
                 <Box display='flex' flexDirection='row' flexWrap='wrap'>

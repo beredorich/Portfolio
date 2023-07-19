@@ -1,13 +1,22 @@
-import { Box, Card, Stack, Typography } from '@mui/material'
-import React, { MutableRefObject } from 'react'
-import AnimatedBox from './AnimatedBox'
+import { Box, Card, Typography } from '@mui/material'
+import React, { MutableRefObject, useEffect } from 'react'
 import mantech from './assets/mantech.png'
 import army from './assets/army.png'
 import caci from './assets/caci.png'
 import ecocar from './assets/ecocar.png'
+import { stagger, useAnimate, useInView } from 'framer-motion'
 
 const JobBox: React.FC<{ left: string | Array<string>, right: string | Array<string>, wrap: string, title: string, timeline: string, bgcolor?: string }> = ({ left, right, wrap, title, timeline, bgcolor }) => {
-
+    const [scope, animate] = useAnimate()
+    const isInView = useInView(scope)
+    useEffect(() => {
+        if (isInView) {
+            const enterAnimation = async () => {
+                await animate("div", { opacity: [0.1, 1], x: [-10, 0] }, { delay: stagger(0.1), duration: 0.5 })
+            }
+            enterAnimation()
+        }
+    }, [isInView]);
     const BoxComponent: React.FC<{ boxContent: string | Array<string>, title: string, timeline: string }> = ({ boxContent: boxContent, title, timeline }) => {
         return (
             <Box display='flex' flexDirection='row' justifyContent='center' alignItems='center'
@@ -35,7 +44,7 @@ const JobBox: React.FC<{ left: string | Array<string>, right: string | Array<str
         )
     }
     return (
-        <Box display='flex' flexDirection='row' width='100%' flexWrap={wrap === 'wrap' ? 'wrap' : 'wrap-reverse'} justifyContent='center' alignItems='center' bgcolor={bgcolor}>
+        <Box ref={scope} display='flex' flexDirection='row' width='100%' flexWrap={wrap === 'wrap' ? 'wrap' : 'wrap-reverse'} justifyContent='center' alignItems='center' bgcolor={bgcolor}>
             <BoxComponent boxContent={left} title={title} timeline={timeline} />
             <BoxComponent boxContent={right} title={title} timeline={timeline} />
         </Box>
@@ -43,7 +52,9 @@ const JobBox: React.FC<{ left: string | Array<string>, right: string | Array<str
 }
 
 const ExperiencePage: React.FC<{ experienceRef: MutableRefObject<HTMLDivElement | null> }> = ({ experienceRef }) => {
+
     return (
+
         <Box ref={experienceRef} sx={{ bgcolor: 'primary.main', display: 'flex', flexDirection: 'column', width: '100%', flexGrow: 1, justifyContent: 'center', alignItems: 'center', gap: 2 }}>
             <Typography variant='h2' sx={{ mb: 5, mt: 10 }} color='white'>Experience</Typography>
             <JobBox left={[
