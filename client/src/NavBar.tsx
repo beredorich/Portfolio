@@ -1,6 +1,6 @@
 import { Box, Button, Drawer, Stack, AppBar, Link } from '@mui/material';
 import { debounce } from 'lodash';
-import React, { MutableRefObject, useEffect, useState } from 'react'
+import React, { MutableRefObject, useContext, useEffect, useState } from 'react'
 import RichLogoBlack from './assets/logo_white.png'
 import MenuIcon from '@mui/icons-material/Menu';
 import githubLogo from './assets/github.png'
@@ -8,6 +8,7 @@ import linkedinLogo from './assets/linkedin.png'
 import AnimateDivs from './AnimateDivs'
 import { useAnimate } from 'framer-motion';
 import DownloadResume from './DownloadResume';
+import { AppContext } from './App';
 
 type NavBarProps = {
     homeRef: MutableRefObject<HTMLDivElement | null>
@@ -18,6 +19,7 @@ type NavBarProps = {
 }
 
 const NavBar: React.FC<NavBarProps> = ({ homeRef, contactRef, aboutRef, projectsRef, experienceRef }) => {
+    const { setDrawerOpen } = useContext(AppContext)
     useEffect(() => {
         const handleResize = debounce(() => {
             if (window.innerWidth < 600) {
@@ -71,7 +73,7 @@ const NavBar: React.FC<NavBarProps> = ({ homeRef, contactRef, aboutRef, projects
                                     <Button variant="text" sx={{ color: 'primary.main' }} size='medium' style={{ maxHeight: '80px' }} onClick={() => handleClick(experienceRef)}>Experiences</Button>
                                     {/* <Button variant="text" sx={{ color: 'primary.main' }} size='medium' style={{ maxHeight: '80px' }} onClick={() => handleClick(projectsRef)}>Projects</Button> */}
                                     <Button variant="text" sx={{ color: 'primary.main' }} size='medium' style={{ maxHeight: '80px' }} onClick={() => handleClick(contactRef)}>Contact</Button>
-                                    <Button variant="text" sx={{ color: 'primary.main' }} size='medium' style={{ maxHeight: '80px' }} onClick={() => handleClick(contactRef)}>Download Resume</Button>
+                                    <Button variant="text" sx={{ color: 'primary.main' }} size='medium' style={{ maxHeight: '80px' }} onClick={() => setDrawerOpen(true)}>Download Resume</Button>
                                 </Stack>
                             </Drawer>
                         </>
@@ -80,7 +82,7 @@ const NavBar: React.FC<NavBarProps> = ({ homeRef, contactRef, aboutRef, projects
                             <Button variant="text" size='medium' style={{ maxHeight: '80px' }} onClick={() => handleClick(aboutRef)}>About</Button>
                             <Button variant="text" size='medium' style={{ maxHeight: '80px' }} onClick={() => handleClick(experienceRef)}>Experiences</Button>
                             {/* <Button variant="text" size='medium' style={{ maxHeight: '80px' }} onClick={() => handleClick(projectsRef)}>Projects</Button> */}
-                            <Button variant="text" size='medium' style={{ maxHeight: '80px' }} onClick={() => handleClick(contactRef)}>Contact</Button>
+                            <Button variant="text" size='medium' style={{ maxHeight: '80px' }} onClick={() => setDrawerOpen(true)}>Contact</Button>
                             <Button variant="text" sx={{ color: 'primary.main' }} size='medium' style={{ maxHeight: '80px' }} onClick={DownloadResume}>Download Resume</Button>
 
                         </Stack>

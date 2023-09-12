@@ -19,7 +19,7 @@
     "@types/react-dom": "^18.2.6",
     "file-saver": "^2.0.5",
     "framer": "^2.3.0",
-    "framer-motion": "^10.12.18",
+    "framer-motion": "^10.16.4",
     "lodash": "^4.17.21",
     "mammoth": "^1.6.0",
     "motion": "^10.16.2",

@@ -1,13 +1,13 @@
-import React, { MutableRefObject, useState } from 'react'
+import React, { MutableRefObject, useState, useContext } from 'react'
 import { Box, Button, Card, Drawer, Link, Stack, Typography } from '@mui/material'
 import RichLogoBlack from './assets/logo_white.png'
 import githubLogo from './assets/github.png'
 import linkedinLogo from './assets/linkedin.png'
 import AnimateDivs from './AnimateDivs'
 import { useAnimate } from 'framer-motion'
-import Resume from './Resume'
-import ContactDrawerContent from './ContactDrawerContent'
+import ContactDrawerContent from './ContactDrawer'
 import DownloadResume from './DownloadResume'
+import { AppContext } from './App'
 
 type ContactPageProps = {
     contactRef: MutableRefObject<HTMLDivElement | null>
@@ -18,7 +18,7 @@ type ContactPageProps = {
 const ContactPage: React.FC<ContactPageProps> = ({ contactRef, homeRef }) => {
 
     const [contactDrawer, setContactDrawer] = useState(false);
-
+    const { drawerOpen, setDrawerOpen } = useContext(AppContext)
     const handleHome = () => {
         if (homeRef.current) {
             homeRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -37,7 +37,7 @@ const ContactPage: React.FC<ContactPageProps> = ({ contactRef, homeRef }) => {
                         sx={{ flexBasis: { xs: '100%', sm: '100%', md: '50%', lg: '50%', xl: '50%' } }}
                         justifyContent='center' alignItems='center'>
                         <Button variant='outlined' sx={{ border: 3, borderRadius: 10, p: 2 }} style={{ borderColor: 'turquoise' }}
-                            onClick={() => setContactDrawer(true)}
+                            onClick={() => setDrawerOpen(true)}
                         >
                             <Typography textAlign='center' variant="h5" color='white'>Contact Me</Typography></Button>
                     </Box>
@@ -47,9 +47,6 @@ const ContactPage: React.FC<ContactPageProps> = ({ contactRef, homeRef }) => {
                             <Typography color='white' variant='h5'>Download Resume</Typography>
                         </Button>
                     </Box>
-                    <Drawer anchor='bottom' open={contactDrawer} onClose={() => setContactDrawer(false)}>
-                        <ContactDrawerContent />
-                    </Drawer>
                 </Box>
                 <Box width='10%' mt={5} justifyContent='center' alignItems='center' display='flex'>
                     <Stack justifyContent='center' alignItems='center'>

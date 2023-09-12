@@ -25,7 +25,7 @@ const mailOptions = {
 };
 
 
-app.get('/sendContact', (req, res) => {
+app.get('/sendTest', (req, res) => {
 
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
@@ -34,6 +34,30 @@ app.get('/sendContact', (req, res) => {
             console.log(`Email sent: ${info.response}`);
         }
     });
+})
+
+app.post('/sendEmail', (req, res) => {
+    try {
+
+        const { name, email, message } = req.body;
+        const mailOptions = {
+            from: process.env.EMAIL,
+            to: process.env.EMAIL,
+            subject: `Message from ${name} - ${email}`,
+            text: message
+        };
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log(`Email sent: ${info.response}`);
+            }
+        });
+        res.status(200).send('Email sent');
+    } catch (err) {
+        console.log(err);
+        res.status(500).send('Error sending email');
+    }
 })
 
 app.get('/resume', (req, res) => {
