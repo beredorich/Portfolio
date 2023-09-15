@@ -17,16 +17,14 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-const mailOptions = {
-    from: process.env.EMAIL,
-    to: process.env.EMAIL,
-    subject: 'Sending Email using Node.js',
-    text: 'That was easy!'
-};
-
 
 app.get('/sendTest', (req, res) => {
-
+    const mailOptions = {
+        from: process.env.EMAIL,
+        to: process.env.EMAIL,
+        subject: 'Sending Email using Node.js',
+        text: 'That was easy!'
+    };
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             console.log(error);
@@ -35,6 +33,13 @@ app.get('/sendTest', (req, res) => {
         }
     });
 })
+
+app.get('/', (req, res) => {
+
+    res.send('Go Cowboys!');
+})
+
+
 
 app.post('/sendEmail', (req, res) => {
     try {
