@@ -4,10 +4,16 @@ import nodemailer from 'nodemailer';
 import cors from 'cors';
 dotenv.config();
 
+
 const app = express();
 app.use(express.json());
 app.use(cors());
-const port = process.env.PORT
+// app.use(express.static('public'))
+var options = {
+    index: 'index.html'
+};
+server.use('/', express.static('/home/site/wwwroot', options));
+const port = process.env.PORT || 8080;
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -34,10 +40,10 @@ app.get('/sendTest', (req, res) => {
     });
 })
 
-app.get('/', (req, res) => {
+// app.get('/', (req, res) => {
 
-    res.send('Go Cowboys!');
-})
+//     res.send('Go Cowboys!');
+// })
 
 
 
