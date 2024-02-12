@@ -1,6 +1,6 @@
 import { Box, Card, Typography } from '@mui/material'
 import React, { MutableRefObject, useEffect } from 'react'
-import mantech from './assets/mantech.png'
+import onyx_mantech from './assets/onyx_mantech.png'
 import army from './assets/army.png'
 import caci from './assets/caci.png'
 import ecocar from './assets/ecocar.png'
@@ -51,6 +51,7 @@ const JobBox: React.FC<{ left: string | Array<string>, right: string | Array<str
     )
 }
 
+
 const ExperiencePage: React.FC<{ experienceRef: MutableRefObject<HTMLDivElement | null> }> = ({ experienceRef }) => {
 
     return (
@@ -58,15 +59,19 @@ const ExperiencePage: React.FC<{ experienceRef: MutableRefObject<HTMLDivElement 
         <Box ref={experienceRef} sx={{ bgcolor: 'primary.main', display: 'flex', flexDirection: 'column', width: '100%', flexGrow: 1, justifyContent: 'center', alignItems: 'center', gap: 2 }}>
             <Typography variant='h2' sx={{ mb: 5, mt: 10 }} color='white'>Experience</Typography>
             <JobBox left={[
-                'Automated Installs of Quarterly Patches using PowerShell Scripting',
-                'Created and deployed Website using MERN stack (MongoDB, Express, React Typescript, Node) to modernize team processes and maintain online databases.',
-                'Provided the essential software support for the Tactical network components including the configuration of the hardware devices and virtual machines, testing new software, and designing the structure of the network.',
-                'Created automation tools using Python to improve team workflow and efficiency.',
-            ]} right={mantech} wrap='reverse-wrap' timeline='January 2022 - Present' title='Software Engineer' />
+                'Created, designed, and deployed patch management Website using MERN stack (MongoDB, Express, React Typescript, Node) to modernize team processes and maintain serverless databases.',
+                'Designed custom end user interface components using React Redux and Material UI.',
+                'Designed, implemented, and maintained RESTful APIs using Node JS and Java Spring boot, ensuring seamless communication between server, Mongo database and client systems. ',
+                'Led sprint and code reviews in agile development processes using Azure services, ensuring timely feedback, identifying areas for improvement, and fostering a collaborative team environment.',
+                'Implemented automation web tools utilizing the MERN stack to enhance team workflow and efficiency, with successful deployment on Azure Cloud.',
+                'Spearheaded testing of full-stack applications within Docker containers and virtual machines, ensuring seamless integration, scalability, and adherence to project specifications.',
+                'Automated Installs of Quarterly Patches using PowerShell and Python Scripting.',
+                'Provided the essential software support for the Tactical network components including the configuration of the hardware devices, virtual machines, and testing new software.',
+            ]} right={onyx_mantech} wrap='reverse-wrap' timeline='January 2022 - Present' title='Software Engineer' />
             <JobBox left={army} right={[
                 'Deploys Battalion radio network for field environments including antennas and radios.',
                 'Advisor to the Battalion Commander regarding all matters concerning communications and IT.'
-            ]} wrap='wrap' timeline='May 2020 - Present' title='Battalion S6 (Signal Officer)' />
+            ]} wrap='wrap' timeline='May 2020 - Present' title='Information Network Engineer Officer ' />
             <JobBox left={[
                 'Interpreted parametric data and descriptions of both mechanical, electronic, and radio frequency capabilities of foreign and domestic RADAR systems to support on-going update of the US Army Apache helicopter RADAR Early Warning System.',
                 'Programed 20+ radar simulations in a custom-made MATLAB/C++ based language (Simulation Modeling Framework) to support 8+ regional needs for the Apache Early Warning System.',
